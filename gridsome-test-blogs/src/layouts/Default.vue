@@ -1,5 +1,3 @@
-<template>
-  <div class="layout">
     <header class="header">
       <strong>
         <g-link to="/">{{ $static.metadata.siteName }}</g-link>
@@ -48,3 +46,4 @@ body {
   margin-left: 20px;
 }
 </style>
+
