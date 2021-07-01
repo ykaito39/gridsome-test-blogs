@@ -1,49 +1,42 @@
-    <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-      </nav>
-    </header>
+<template>
+  <main class="layout" role="main">
     <slot/>
-  </div>
+    <div class="footer">
+      <p>
+        Built with
+        <a class="link" href="//gridsome.org">Gridsome</a>
+        & Made with ❤️ by
+        <a class="link" href="//twitter.com/lauragift_">Gift Egwuenu</a>
+      </p>
+    </div>
+  </main>
 </template>
-
-<static-query>
-query {
-  metadata {
-    siteName
-  }
-}
-</static-query>
 
 <style>
 body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
   line-height: 1.5;
+  border: 15px solid #fecd43;
+  min-height: 100vh;
 }
-
 .layout {
   max-width: 760px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
 }
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
+.footer {
+  padding-top: calc(30em / 4);
+  text-align: center;
+  font-size: 1em;
 }
-
-.nav__link {
-  margin-left: 20px;
+.link {
+  border: 2px dashed #fecd43;
+  padding: 7px;
+  color: #333;
+  text-decoration: none;
 }
 </style>
-
