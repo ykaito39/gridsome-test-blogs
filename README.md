@@ -25,3 +25,11 @@ Branches
 Puroduction branch: master  
 <- 何故かmainではなくmasterにアップロードされてた... 
   
+## source-filesystemのGraphQL設定について  
+https://gridsome.org/plugins/@gridsome/source-filesystem  
+上記のサイトを参考に、gridsome.config.jsファイルを設定する。  
+コメントは//がつかえる。  
+本レポジトリでは、optionsにbaseDirとpathを分割して与えたが、  
+このときbaseDirはgridsome.config.jsがあるファイルからの位置で与えた。  
+src/templates/Post.md、src/pages/Index.vueで次のようなエラーが発生する場合は、pathが間違っている可能性もある。    
+Error: Cannot query field "title" on type "Post".
