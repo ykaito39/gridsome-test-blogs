@@ -5,9 +5,9 @@
 </template>
 
 <page-query>
-query($id:ID!){
-	post(id:$id){
-	title
+query Post($path: String!){
+	post(path: $path){
+		title
   }
 }
 </page-query>

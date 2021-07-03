@@ -1,36 +1,17 @@
 module.exports = {
-  siteName: 'Gridsome Blog',
-  siteDescription: 'A simple blog designed with Gridsome',
-  templates: {
-    Post: '/blog/:title',
-  },
-  plugins: [
+  	siteName: 'ykaito39s Blog',
+  	plugins: [
     {
       use: '@gridsome/source-filesystem',
       options: {
-		typeName:'Post',
-        path: './content/posts/',
-		//route: ':slug',
-		template: './src/templates/Post.vue',
-		refs:{
-			tags:{
-				typeName:'Tag',
-				route: 'tag/:id',
-				create: true
-			}
+			typeName:'Post',
+        	baseDir: './src/content/posts/', //In my case, Including "src/" worked correctly.
+		    path: '*.md'
 		}
-      }
-    }
-  ],
-  transformers: {
-    //Add markdown support to all file-system sources
-    remark: {
-      externalLinksTarget: '_blank',
-      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
-      plugins: [
-        '@gridsome/remark-prismjs'
-      ]
-    }
-  },
+	}
+    ],
+	templates: {
+		Post:'/blog',
+		}
 }
 

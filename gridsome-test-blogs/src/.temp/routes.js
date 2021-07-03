@@ -5,7 +5,7 @@ const c4 = () => import(/* webpackChunkName: "page--src--pages--index-vue" */ "/
 
 export default [
   {
-    path: "/blog/:title/",
+    path: "/blog/",
     component: c1
   },
   {
