@@ -1,19 +1,36 @@
-// This is where project configuration and plugin options are located.
-// Learn more: https://gridsome.org/docs/config
-
-// Changes here require a server restart.
-// To restart press CTRL + C in terminal and run `gridsome develop`
-
 module.exports = {
-  siteName: 'Gridsome test blog',
-  siteDescription: "A test blog with gridsome.",
+  siteName: 'Gridsome Blog',
+  siteDescription: 'A simple blog designed with Gridsome',
+  templates: {
+    Post: '/blog/:title',
+  },
   plugins: [
-	  {
-  		use: "gridsome/source-filesystem",
-  		options:{
-  			path: "content:posts/**/*.md",
-  			typeName:"post",
-  		}
-  	  }
-  ]
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+		typeName:'Post',
+        path: './content/posts/',
+		//route: ':slug',
+		template: './src/templates/Post.vue',
+		refs:{
+			tags:{
+				typeName:'Tag',
+				route: 'tag/:id',
+				create: true
+			}
+		}
+      }
+    }
+  ],
+  transformers: {
+    //Add markdown support to all file-system sources
+    remark: {
+      externalLinksTarget: '_blank',
+      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+      plugins: [
+        '@gridsome/remark-prismjs'
+      ]
+    }
+  },
 }
+
