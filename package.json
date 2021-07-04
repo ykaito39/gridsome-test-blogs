@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ykaito39/gridsome-test-blogs/issues"
   },
-  "homepage": "https://github.com/ykaito39/gridsome-test-blogs#readme"
+  "homepage": "https://github.com/ykaito39/gridsome-test-blogs#readme",
+  "devDependencies": {
+    "tailwindcss": "^2.2.4"
+  }
 }

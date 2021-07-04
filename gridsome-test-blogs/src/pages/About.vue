@@ -1,14 +1,59 @@
 <template>
   <Layout>
-    <h1>About us</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloremque omnis animi, eligendi magni a voluptatum, vitae, consequuntur rerum illum odit fugit assumenda rem dolores inventore iste reprehenderit maxime! Iusto.</p>
+    <div class="author-head">
+      <g-image src="~/site_images/author.jpg" width="100" />
+      <h1>About ykaito39</h1>
+    </div>
+    <div>
+      <h2>経歴</h2>
+      <p>2019年3月 高専電気情報工学科を卒業<br/>
+      2019年4月 輸送機器製造業社へ入社<br/>
+      至 現在</p>
+      
+      <h2>スキルセット</h2>
+      <p>C, AVR/gcc<br/>
+      Linux<br/>
+      Python<br/>
+      <span>selenium, beautifulsoup, pyautoGUIを用いた業務自動化/RPA</span>
+      <span>Flaskを使ったRESTfulサーバーの構築</span>
+      </p>
+      
+      <h2>趣味</h2>
+      <p>バイクツーリング、サーキット走行<br/>
+      写真撮影(デジタル:Fujifilm X-pro2, アナログ:PENTAX MX)<br/>
+      画像加工(PhotoShop)<br/>
+      </p>
+    </div>
+
   </Layout>
 </template>
 
 <script>
 export default {
   metaInfo: {
-    title: 'About us'
+    title: 'About ykaito39'
   }
 }
 </script>
+<style>
+.author-head {
+  display: flex;
+  //justify-content:center;
+  align-items:flex-end;
+  height: 100px;
+}
+.author-head img{
+  float: left;
+  height: 100px;
+  border-radius: 50%;
+
+  padding:3px;
+  background-color: #F1F1F1;
+  box-shadow: 0 3px 18px -4px rgba(0,0,0,0.8);
+}
+.author-head h1{
+  position: relative;
+  left: 10px;
+  margin: 0;
+}
+</style>

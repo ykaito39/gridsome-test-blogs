@@ -2,25 +2,23 @@
   <main class="layout" role="main">
     <slot/>
     <div class="footer">
-      <p>
-        Built with
-        <a class="link" href="//gridsome.org">Gridsome</a>
-        & Made with ❤️ by
-        <a class="link" href="//twitter.com/lauragift_">Gift Egwuenu</a>
-      </p>
     </div>
   </main>
 </template>
 
 <style>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   margin: 0;
   padding: 0;
+  color: #F1F1F1;
   line-height: 1.5;
-  border: 15px solid #fecd43;
   min-height: 100vh;
+  background-color: #0A2A3A;
 }
 .layout {
   max-width: 760px;
@@ -33,10 +31,28 @@ body {
   text-align: center;
   font-size: 1em;
 }
-.link {
-  border: 2px dashed #fecd43;
-  padding: 7px;
-  color: #333;
+.link{
+  color: #61c2d3;
   text-decoration: none;
+  transition: all .3s;
+  position:relative;
+}
+.link:hover:before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-bottom: solid 2px;
+  animation: link_animation .3s linear forwards;
+}
+
+//linkのアニメーション(borderを左右に表示)
+@keyframes link_animation{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 100%;
+  }
 }
 </style>
