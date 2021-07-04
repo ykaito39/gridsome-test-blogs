@@ -8,15 +8,22 @@
   </div>
 
   <div class="body-layout">
-    <header class="header">
-      <p>An portfolio pages. Made with Gridsome+Netlify.</p>
-      <g-link to="/about/" class="link"> About ykaito39</g-link>
-    </header>
+    <div class="scroll-stop-box">
+    <div class="scroll-stop-body">
+      <header class="header">
+        <p>An portfolio pages. Made with Gridsome+Netlify.</p>
+        <g-link to="/about/" class="link"> About ykaito39</g-link>
+      </header>
 
-    <h2>投稿一覧</h2>
-    <g-link v-for="{node} in $page.allPost.edges" :to="node.path" :key="node.id">
-      <h3 class="text-xs link">{{ node.title }}</h3>
-    </g-link>
+      <h2>投稿一覧</h2>
+      <g-link v-for="{node} in $page.allPost.edges" :to="node.path" :key="node.id">
+        <div class="post-card link">
+          <h3>{{ node.title }}</h3>
+          <p>{{ node.date }}</p>
+        </div>
+      </g-link>
+    </div>
+  </div>
   </div>
 </layout>
 </template>
@@ -29,6 +36,7 @@ query ($page: Int){
             id
         		title
             path
+            date (format: "YYYY/MM/DD")
 			}
 		}
 	}
@@ -118,5 +126,33 @@ metaInfo:{
   position: absolute;
   bottom: 0;
   left: 20px;
+}
+
+.post-card{
+  margin: 10px 0 0 0;
+  display: flex;
+  align-items:flex-end;
+  height: 20px;
+}
+
+.post-card h3{
+  margin: 0;
+  padding: 0;
+}
+
+.post-card p{
+  margin: 0;
+  padding: 0, 10px;
+}
+
+.scroll-stop-box{
+  z-index: 2;
+  position: relative;
+}
+
+.scroll-stop-body{
+  z-index: 2;
+  position: sticky;
+
 }
 </style>

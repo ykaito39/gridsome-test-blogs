@@ -1,7 +1,6 @@
 <template>
   <main class="layout" role="main">
-    <slot></slot><!-- Page content will be inserted here -->
-
+    <slot><g-link to="/" class="link">HOME</g-link></slot><!-- Page content will be inserted here -->
   </main>
 </template>
 
