@@ -4,7 +4,6 @@
     <div class="slide-img"></div>
     <div class="slide-img"></div>
     <div class="slide-img"></div>
-    <div class="slide-img"></div>
     <h1>ykaito39's Home Page!</h1>
   </div>
 
@@ -45,13 +44,23 @@ metaInfo:{
 </script>
 
 <style>
+/* メディアクエリがうまくいかない */
+@media all and (min-width:801px){
 .slide{
   z-index: 1;
   position: relative;
   height: 100vh;
   overflow: hidden;
-}
+}}
+@media all and (max-width:800px){
+.slide{
+  height:auto;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+}}
 
+@media all and (min-width:801px){
 .slide .slide-img{
   min-height: 100vh;
   width: 100vw;
@@ -64,7 +73,22 @@ metaInfo:{
 
   animation: slideshow 36s linear infinite; /* この秒数が全体長さ */
   opacity: 0;
-}
+}}
+@media all and (max-width:800px){
+.slide .slide-img{
+  height: 10%;
+  width: 100vw;
+  position: absolute;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+
+  animation: slideshow 27s linear infinite; /* この秒数が全体長さ */
+  opacity: 0;
+}}
+
 
 /* 表示秒/(表示秒+切替秒) = 4/(4+1) =0.25 */
 @keyframes slideshow{
@@ -81,17 +105,13 @@ metaInfo:{
 .slide .slide-img:nth-child(1){
   background-image: url(../site_images/1.jpg);
 }
-.slide .slide-img:nth-child(2){
-  background-image: url(../site_images/8.jpg);
-  animation-delay: 9s;
-}
 .slide .slide-img:nth-child(3){
   background-image: url(../site_images/4.jpg);
-  animation-delay: 18s;
+  animation-delay: 9s;
 }
 .slide .slide-img:nth-child(4){
   background-image: url(../site_images/7.jpg);
-  animation-delay: 27s;
+  animation-delay: 18s;
 }
 
 .slide h1{
