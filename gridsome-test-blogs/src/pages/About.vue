@@ -14,8 +14,8 @@
       <p>C, AVR/gcc<br/>
       Linux<br/>
       Python<br/>
-      <div class="addnote-box">selenium, beautifulsoup, pyautoGUIを用いた業務自動化/RPA<br/>
-      Flaskを使ったRESTfulサーバーの構築</div>
+      <div class="addnote-box">selenium, beautifulsoup, pyautoGUI等を用いた業務自動化/RPA<br/>
+      クローラとFlaskを使った社内データ配信サーバーの構築</div>
       </p>
       
       <h2>趣味</h2>
