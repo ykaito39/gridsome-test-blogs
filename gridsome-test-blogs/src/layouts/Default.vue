@@ -26,7 +26,11 @@ body {
   min-height: 100vh;
   background-color: #0A2A3A;
 }
-.layout {
+.layout{
+  margin: 0 auto;
+}
+
+.body-layout {
   max-width: 760px;
   margin: 0 auto;
   padding-left: 20px;
