@@ -1,8 +1,7 @@
 <template>
   <main class="layout" role="main">
-    <slot/>
-    <div class="footer">
-    </div>
+    <slot></slot><!-- Page content will be inserted here -->
+
   </main>
 </template>
 
@@ -10,6 +9,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Reset CSS */
+*,::after,::before{box-sizing:border-box}html{line-sizing:normal}body{margin:0}[hidden]{display:none}h1{font-size:2rem}h2{font-size:1.5rem}h3{font-size:1.17rem}h4{font-size:1rem}h5{font-size:.83rem}h6{font-size:.67rem}h1{margin:.67em 0}pre{white-space:pre-wrap}hr{border-style:solid;border-width:1px 0 0;color:inherit;height:0;overflow:visible}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle;max-width:100%}audio:not([controls]){display:none}picture{display:contents}source{display:none}canvas,img,svg,video{height:auto}audio{width:100%}img{border-style:none}svg{overflow:hidden}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}
+
+/* User CSS */
 body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
@@ -31,6 +35,14 @@ body {
   text-align: center;
   font-size: 1em;
 }
+h2 {
+  margin: 20px 0 5px 0;
+}
+
+p {
+  margin: 5px, 0;
+}
+
 .link{
   color: #61c2d3;
   text-decoration: none;
@@ -46,7 +58,7 @@ body {
   animation: link_animation .3s linear forwards;
 }
 
-//linkのアニメーション(borderを左右に表示)
+/* linkのアニメーション(borderを左右に表示) */
 @keyframes link_animation{
   0%{
     width: 0%;
@@ -54,5 +66,11 @@ body {
   100%{
     width: 100%;
   }
+}
+
+.addnote-box{
+  border: 1px solid;
+  padding: 5px;
+  margin-left: 0px 10px 0px 10px;
 }
 </style>

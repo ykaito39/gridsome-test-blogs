@@ -14,14 +14,15 @@
       <p>C, AVR/gcc<br/>
       Linux<br/>
       Python<br/>
-      <span>selenium, beautifulsoup, pyautoGUIを用いた業務自動化/RPA</span>
-      <span>Flaskを使ったRESTfulサーバーの構築</span>
+      <div class="addnote-box">selenium, beautifulsoup, pyautoGUIを用いた業務自動化/RPA<br/>
+      Flaskを使ったRESTfulサーバーの構築</div>
       </p>
       
       <h2>趣味</h2>
       <p>バイクツーリング、サーキット走行<br/>
-      写真撮影(デジタル:Fujifilm X-pro2, アナログ:PENTAX MX)<br/>
-      画像加工(PhotoShop)<br/>
+      写真撮影
+      <div class="addnote-box">デジタル:Fujifilm X-pro2<br/> アナログ:PENTAX MX</div><br/>
+      画像加工(PhotoShop)</div><br/>
       </p>
     </div>
 
@@ -37,6 +38,7 @@ export default {
 </script>
 <style>
 .author-head {
+  margin: 10px 0 0 0;
   display: flex;
   //justify-content:center;
   align-items:flex-end;

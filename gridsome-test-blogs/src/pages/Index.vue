@@ -6,12 +6,10 @@
   <g-link to="/about/" class="link"> About ykaito39</g-link>
 </header>
 
-<ul>
 <h2>投稿一覧</h2>
-<li v-for="{node} in $page.allPost.edges">
-	<h2 v-html="node.title" class="text-xs"/>
-</li>
-</ul>
+<g-link v-for="{node} in $page.allPost.edges" :to="node.path" :key="node.id">
+	<h3 class="text-xs link">{{ node.title }}</h3>
+</g-link>
 </layout>
 </template>
 
@@ -20,7 +18,9 @@ query ($page: Int){
 	allPost(page: $page){
 		edges{
 			node{
+            id
         		title
+            path
 			}
 		}
 	}
