@@ -22,6 +22,7 @@
           <p>{{ node.date }}</p>
         </div>
       </g-link>
+      
     </div>
   </div>
   </div>
@@ -44,9 +45,9 @@ query ($page: Int){
 </page-query>
 
 <script>
-export default{
-metaInfo:{
-  title:"Index"
+export default {
+  metaInfo:{
+    title:"Index"
   }
 }
 </script>
