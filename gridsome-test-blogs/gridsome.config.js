@@ -6,12 +6,25 @@ module.exports = {
       options: {
 			typeName:'Post',
         	baseDir: './src/content/posts/', //In my case, Including "src/" worked correctly.
-		    path: '*.md'
+		    path: '*.md',
+			route: ':slug',
+			refs: {
+				tags: {
+				  typeName: 'Tag',
+				  route: '/tag/:id',
+				  create: true
+				}
+			}
 		}
 	}
     ],
 	templates: {
-		Post:'/blog',
-		}
+		Post:[
+			{
+				path: '/blog/:year-:month/:title',
+				component: './src/templates/Post.vue'
+			}
+		]
+	}
 }
 

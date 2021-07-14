@@ -16,12 +16,12 @@
       </header>
 
       <h2>投稿一覧</h2>
-      <g-link v-for="{node} in $page.allPost.edges" :to="node.path" :key="node.id">
-        <div class="post-card link">
+      <div v-for="{node} in $page.allPost.edges" :to="node.path" :key="node.id">
+        <g-link :to="node.path" class="post-card link" >
           <h3>{{ node.title }}</h3>
           <p>{{ node.date }}</p>
-        </div>
-      </g-link>
+        </g-link>
+      </div>
       
     </div>
   </div>
