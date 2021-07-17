@@ -1,5 +1,11 @@
 <template>
 <layout>
+  <div class="box">
+      <div id="nav">
+        <div class="nav1 nav-visible">Welcome!</div>
+        <div class="nav2 nav-hidden">ykaito39's Home page.</div>
+      </div>
+  </div>
   <div class="slide">
     <div class="slide-img"></div>
     <div class="slide-img"></div>
@@ -53,6 +59,50 @@ export default {
 </script>
 
 <style>
+/* navi関連 */
+  .box{
+      height: 2000px;
+      overflow:scroll;
+  }
+  #nav{
+      height: 50px;
+      width:100vw;
+
+      position:fixed;
+      top:0;
+      left:0;
+
+      background-color: indigo;
+      color: white;
+  }
+
+  .nav-visible{
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0px);
+  }
+  .nav-hidden{
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-100%);
+  }
+  .nav1{
+      position:absolute;
+      top:0;
+      left:0;
+
+      transition: all 1s cubic-bezier(0.19,1,0.22,1); /* 動かない */
+      -webkit-transition: all 1s cubic-bezier(0.19,1,0.22,1);
+  }
+  .nav2{
+      position:absolute;
+      top:0;
+      left:0;
+
+      transition: all 1s cubic-bezier(0.19,1,0.22,1); /* 動かない */
+      -webkit-transition: all 1s cubic-bezier(0.19,1,0.22,1);
+  }
+
 /* メディアクエリがうまくいかない */
 @media all and (min-width:801px){
 .slide{
@@ -157,3 +207,24 @@ export default {
 
 }
 </style>
+
+<script>
+  //スクロール量 取得
+  window.addEventListener("load", (event) =>{
+    window.addEventListener("scroll", (event) =>{
+      let y = window.scrollY;
+      console.log(y);
+      if(y <= 100){
+        document.getElementsByClassName("nav1")[0].classList.add("nav-visible");
+        document.getElementsByClassName("nav1")[0].classList.remove("nav-hidden");
+        document.getElementsByClassName("nav2")[0].classList.add("nav-hidden");
+        document.getElementsByClassName("nav2")[0].classList.remove("nav-visible");
+      }else{
+        document.getElementsByClassName("nav1")[0].classList.remove("nav-visible");
+        document.getElementsByClassName("nav1")[0].classList.add("nav-hidden");
+        document.getElementsByClassName("nav2")[0].classList.remove("nav-hidden");
+        document.getElementsByClassName("nav2")[0].classList.add("nav-visible");
+      }
+    });
+  });
+</script>
