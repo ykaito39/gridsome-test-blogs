@@ -58,6 +58,27 @@ export default {
 }
 </script>
 
+<script type="javascript">
+  //スクロール量 取得
+  window.addEventListener("load", (event) =>{
+    window.addEventListener("scroll", (event) =>{
+      let y = window.scrollY;
+      console.log(y);
+      if(y <= 100){
+        document.getElementsByClassName("nav1")[0].classList.add("nav-visible");
+        document.getElementsByClassName("nav1")[0].classList.remove("nav-hidden");
+        document.getElementsByClassName("nav2")[0].classList.add("nav-hidden");
+        document.getElementsByClassName("nav2")[0].classList.remove("nav-visible");
+      }else{
+        document.getElementsByClassName("nav1")[0].classList.remove("nav-visible");
+        document.getElementsByClassName("nav1")[0].classList.add("nav-hidden");
+        document.getElementsByClassName("nav2")[0].classList.remove("nav-hidden");
+        document.getElementsByClassName("nav2")[0].classList.add("nav-visible");
+      }
+    });
+  });
+</script>
+
 <style>
 /* navi関連 */
   .box{
@@ -207,24 +228,3 @@ export default {
 
 }
 </style>
-
-<script>
-  //スクロール量 取得
-  window.addEventListener("load", (event) =>{
-    window.addEventListener("scroll", (event) =>{
-      let y = window.scrollY;
-      console.log(y);
-      if(y <= 100){
-        document.getElementsByClassName("nav1")[0].classList.add("nav-visible");
-        document.getElementsByClassName("nav1")[0].classList.remove("nav-hidden");
-        document.getElementsByClassName("nav2")[0].classList.add("nav-hidden");
-        document.getElementsByClassName("nav2")[0].classList.remove("nav-visible");
-      }else{
-        document.getElementsByClassName("nav1")[0].classList.remove("nav-visible");
-        document.getElementsByClassName("nav1")[0].classList.add("nav-hidden");
-        document.getElementsByClassName("nav2")[0].classList.remove("nav-hidden");
-        document.getElementsByClassName("nav2")[0].classList.add("nav-visible");
-      }
-    });
-  });
-</script>
